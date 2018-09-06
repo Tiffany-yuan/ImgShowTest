@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片不同展示方式</title>
+</head>
+<body>
+<h4>1、img标签固定宽或高展示（图片比例不会变）</h4>
+<div class="test1 common">
+    <img src="imgs/long.jpg" alt="">
+    <img src="imgs/width.jpg" alt="">
+</div>
+
+<h4>2、img标签固定宽高展示（图片比例会变）</h4>
+<div class="test2 common">
+    <img src="imgs/long.jpg" alt="">
+    <img src="imgs/width.jpg" alt="">
+</div>
+
+<h4>3、使用css background属性 background-size属性</h4>
+<p>(1) background-size一个参数</p>
+<div class="img1 test3-1 common"></div>
+<div class="img2 test3-2 common"></div>
+<p>(2) background-size两个参数</p>
+<div class="img1 test4-1 common"></div>
+<div class="img2 test4-2 common"></div>
+<p>(3) 属性cover</p>
+<div class="img1 test5-1 common"></div>
+<div class="img2 test5-2 common"></div>
+<p>(4) 属性cover (加上background-position)</p>
+<div class="img1 test5-1 test5 common"></div>
+<div class="img2 test5-2 test5 common"></div>
+<p>(5) 属性cover (加上background-position)</p>
+<div class="img1 test5-1 test5 common"></div>
+<div class="img2 test5-2 test5 common"></div>
+<p>(6) 属性contain</p>
+<div class="img1 test6"></div>
+<div class="img2 test6"></div>
+
+<h4></h4>
+<div class="column">
+    <div class="figure"></div>
+</div>
+
+</body>
+</html>
+
+<style>
+    .common{
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        background-repeat: no-repeat;
+        border: 1px solid #eee;
+    }
+
+    .test1 img{
+        width: 200px;
+    }
+    .test2 img{
+        width: 200px;
+        height: 200px;
+    }
+
+    .img1{
+        background-image: url("imgs/long.jpg");
+    }
+    .img2{
+        background-image: url("imgs/width.jpg");
+    }
+    .test3-1{
+        background-size: 100%;
+    }
+    .test3-2{
+        background-size: 100%;
+    }
+    .test4-1{
+        background-size: 100% 100%;
+    }
+    .test4-2{
+        background-size: 100% 100%;
+    }
+    .test5-1{
+        background-size: cover;
+    }
+    .test5-2{
+        background-size: cover;
+    }
+    .test5{
+        background-position: center;
+    }
+    .test6{
+        background-size: contain;
+    }
+
+    .column{
+        max-width: 720px;
+    }
+    .figure {
+        padding-top:159.17%; /* 316 / 1024 */
+        background: url("imgs/long.jpg") no-repeat;
+        background-size:cover;
+        background-position:center;
+    }
+</style>
